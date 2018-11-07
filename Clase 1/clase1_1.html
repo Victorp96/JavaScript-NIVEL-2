@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>nivel 2 clase 1</title>  
+</head>
+<body>
+    <h1>nivel 2</h1>
+    <a href="#" onclick="generar()">generar</a>
+    <a href="#" onclick="cambiarTitulo()">Cambiar titulo</a>
+    <a href="#" onclick="agregarContenido()">Agregar Contenido</a>
+
+    <script>       
+            var n=0;
+            setInterval("actualizar()",1000);
+        function agregarContenido(){
+            for (let i = 1; i <=5; i++) {
+                let x = Math.random()*10;
+                window.document.body.innerHTML+="<p>"+x+"</p>";         
+            }
+            window.document.body.innerHTML+="<hr>"
+        }
+        function actualizar(){
+            n++;
+            window.document.title=n;
+        }
+        function cambiarTitulo() {
+            let titulo=prompt("Introduzca el titulo")
+            let color=prompt("Introduzca un color")
+            window.document.title=titulo
+            window.document.bgColor=color
+        }
+       function generar() {
+            window.document.write("nuevo contenido")
+            window.document.write("<h1>generado con write</h1>")
+            window.document.close()
+       }
+        
+    </script>
+    
+</body>
+</html>

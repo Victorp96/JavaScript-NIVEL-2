@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title></title>
+</head>
+<body  onblur="document.title='se salio'" onfocus="document.title='volvio'">
+	<script>
+		function registrar(f){
+			//document.form1.correo.focus();
+			f.correo.focus();
+			if (confirm("Seguro?"))
+                f.submit();
+		}
+		function mayusculas(x){
+			x.value=x.value.toUpperCase();
+			x.style.backgroundColor="white"
+		}
+		function minusculas(input){
+			input.value=input.value.toLowerCase();
+			input.style.backgroundColor="yellow"
+		}
+	</script>
+	<h2>Buscar</h2>
+	<form name="Buscar" method="post" onsubmit="return confirm('Seguro?')" action="http://google.com/search">
+		<input type="text" name="q" />
+		<input type="submit" value="Buscar" />
+	</form>
+
+	<h2>Registro de usuarios</h2>
+	<form name="form1">
+		<input type="text" onfocus="minusculas(this)" onblur="mayusculas(this)" name="correo" placeholder="correo" /> <br><br>
+		<input type="text" onfocus="minusculas(this)" onblur="mayusculas(this)" name="usuario" placeholder="usuario" /> <br><br>
+		<input type="password" name="clave" placeholder="contraseña" /> <br><br>
+		<input type="password" name="confirmacion" placeholder="confirmacion" /> <br><br>
+		<input type="button" value="Registrar" onclick="registrar(this.form)"/> <!-- pasar por parametros el formulario que me contiene a mi -->
+	</form>
+</body>
+</html>
