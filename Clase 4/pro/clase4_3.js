@@ -7,7 +7,7 @@ document.form1.boton.onclick= function(){
     // indexOf busca un elemento en un arreglo
     // si no lo consigue, retorna -1, en caso contrario
     // retorna el indice donde esta ubicado el elemento
-    if (nombres.indexOf(nombre.value.toLowerCase())==-1){
+    if (nombres.indexOf(nombre.value.toLowerCase())==-1){ //buscar el elemento en el arreglo
         
         create(nombre.value.toLowerCase(),nota.value)
 

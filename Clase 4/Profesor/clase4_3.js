@@ -23,16 +23,17 @@ function create(nombre,nota){
 
     agregarElemento(nombres.length,nombre,nota);
 }
-function deletee(i){
-    if (confirm("Seguro?")){
+function deletee(nombre,id){
+    if (confirm("Seguro desea eliminar "+nombre+" ?")){
+        let posicion = nombres.indexOf(nombre);
         // elimina el elemento de las posicion i-1
-        nombres.splice(i-1,1)
-        notas.splice(i-1,1);
+        nombres.splice(posicion,1)
+        notas.splice(posicion,1);
         // buscamos el div que contiene al elemento que 
         // deseamos eleminar
         var div_listado=document.getElementById("listado");
         // se elimina el elemento
-        div_listado.removeChild(document.getElementById(i));
+        div_listado.removeChild(document.getElementById(id));
     }
 }
 function read(i){
@@ -52,7 +53,7 @@ function agregarElemento(i,nombre,nota){
     boton_nuevo.type="button"
     boton_nuevo.value="Eliminar"
     boton_nuevo.onclick=function (){
-        deletee(i);
+        deletee(nombre,i+1);
     }
     // se crea un texto nuevo
     var texto = document.createTextNode(i+" "+nombre+" "+nota);
